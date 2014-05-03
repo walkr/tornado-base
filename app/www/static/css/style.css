@@ -1,0 +1,74 @@
+html {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  color: #222;
+  font-size: 16px;
+  font-family: "Ubuntu", "Helvetica Neue", "Lucida Grande", Arial;
+  -webkit-font-smoothing: antialiased;
+  background: #f8f8f8;
+  padding: 5%;
+  line-height: 1.4em;
+}
+a,
+p,
+div,
+ul,
+ol,
+h1,
+h2,
+h3,
+img,
+textarea,
+form,
+select,
+input {
+  padding: 0;
+  margin: 0;
+}
+input[type="button"],
+input[type="text"],
+input[type="submit"],
+input[type="password"] {
+  -webkit-appearance: none;
+}
+img {
+  border: 0px;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: orange;
+  text-decoration: none;
+  transition: all 500ms ease;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+.clear {
+  clear: both;
+}
+.invisible {
+  display: none;
+}
+.center {
+  position: relative;
+  text-align: center;
+}
+.left {
+  position: relative;
+  float: left;
+}
+.right {
+  position: relative;
+  float: right;
+}
+.inline {
+  display: inline-block;
+}

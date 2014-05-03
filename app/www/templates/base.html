@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Tornado project{% end %}</title>
+
+    <meta name="description" content="Tornado project">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="Tornado project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://example.com" />
+    <meta property="og:image" content="http://exmple.com/image.jpg" />
+    <meta property="og:description" content="Tornado project" />
+
+    <!-- <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png"> -->
+    <link rel="shortcut icon" href="/static/img/favicon.png">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">Header</div>
+        <div class="content">{% block content %}{% end %}</div>
+        <div class="footer">Footer</div>
+    </div>
+    <script src="/static/js/all.js"></script>
+    <script src="/static/js/app.js"></script>
+    {% block js %}{% end %}
+</body>
+</html>
