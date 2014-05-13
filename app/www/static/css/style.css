@@ -5,12 +5,13 @@ body {
   padding: 0;
   margin: 0;
   color: #222;
-  font-size: 16px;
   font-family: "Ubuntu", "Helvetica Neue", "Lucida Grande", Arial;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background: #f8f8f8;
-  padding: 5%;
+  padding-top: 5%;
   line-height: 1.4em;
+  font-size: 16px;
 }
 a,
 p,
@@ -51,6 +52,9 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+ul > li {
+  list-style-type: circle;
+}
 .clear {
   clear: both;
 }
@@ -71,4 +75,40 @@ button:focus {
 }
 .inline {
   display: inline-block;
+}
+input[type=text] {
+  border: solid #ddd 1px;
+  padding: 6px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+input[type=submit],
+input[type=button],
+.button {
+  display: inline-block;
+  color: #555;
+  padding: 7px 20px;
+  background: #eee;
+  border-radius: 2px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 0;
+}
+input[type=submit].green,
+input[type=button].green,
+.button.green {
+  background: #86cd4c;
+  color: #fff;
+}
+input[type=submit].red,
+input[type=button].red,
+.button.red {
+  background: #f92132;
+  color: #fff;
+}
+input[type=submit].blue,
+input[type=button].blue,
+.button.blue {
+  background: #6293fe;
+  color: #fff;
 }
