@@ -16,7 +16,7 @@ if __name__ == "__main__":
         'Starting server [port={}] [debug={}]'.format(
             options.port, config.TORNADO['debug']))
 
-    application.listen(options.port)
+    application.listen(options.port, xheaders=True)
     tornado.ioloop.IOLoop.instance().start()
 
 
