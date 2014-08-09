@@ -10,13 +10,13 @@
     <meta property="og:title" content="Tornado project" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://example.com" />
-    <meta property="og:image" content="http://exmple.com/image.jpg" />
+    <meta property="og:image" content="http://example.com/image.jpg" />
     <meta property="og:description" content="Tornado project" />
 
-    <!-- <link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon.png"> -->
-    <link rel="shortcut icon" href="/static/img/favicon.png">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/semantic.min.css">
+    <!-- <link rel="apple-touch-icon-precomposed" href="{{static_url('img/apple-touch-icon.png')}}"> -->
+    <link rel="shortcut icon" href="{{static_url('img/favicon.png')}}">
+    <link rel="stylesheet" href="{{static_url('css/style.css')}}">
+    <link rel="stylesheet" href="{{static_url('css/semantic.min.css')}}">
 </head>
 <body>
     <div class="wrapper">
@@ -24,8 +24,8 @@
         <div class="content">{% block content %}{% end %}</div>
         <div class="footer">Footer</div>
     </div>
-    <script src="/static/js/all.js"></script>
-    <script src="/static/js/app.js"></script>
+    <script src="{{static_url('js/all.js')}}"></script>
+    <script src="{{static_url('js/app.js')}}"></script>
     {% block js %}{% end %}
 </body>
 </html>
