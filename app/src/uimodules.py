@@ -1,7 +1,8 @@
 import tornado.web
 
 
-class Item(tornado.web.UIModule):
-    def render(self, pile):
-        item = {}
-        return self.render_string('modules/entry.html', item=item)
+class Module(tornado.web.UIModule):
+    """ General purpose module rendering """
+
+    def render(self, filepath, **kwargs):
+        return self.render_string(filepath, **kwargs)

@@ -3,14 +3,13 @@ from tornado.testing import AsyncHTTPTestCase
 
 import os
 import sys
-import copy
-import unittest
 import logging
 
 
 sys.path.append(os.path.dirname(__file__) + '/..')
 
 from app import server
+from app.src.handlers import BaseHandler
 
 
 class WebTestCase(AsyncHTTPTestCase):
@@ -39,6 +38,17 @@ class HTTPTest(WebTestCase):
     def test_get_main(self):
         resp = self.fetch('/')
         self.assertEqual(200, resp.code)
+
+
+class TestSecuredHandler(unittest.TestCase):
+    def test_strip_domain(self):
+        location = 'http://google.com/path?key=value'
+        expected = '/path?key=value'
+        self.assertEqual(BaseHandler._strip_domain(location), expected)
+
+        location = '/path?key=value'
+        expected = '/path?key=value'
+        self.assertEqual(BaseHandler._strip_domain(location), expected)
 
 
 if __name__ == '__main__':
