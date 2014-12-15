@@ -8,18 +8,15 @@ Base directory structure for tornado web apps
 ```bash
 
 # Clone it
-> git clone https://github.com/walkr/tornado-base
+$ git clone https://github.com/walkr/tornado-base
 
 # Run install [install venv and reqs]
-> make install
+$ make install
 
-# Start [dev mode]
-> make start-dev
-
-# Start [production mode]
-> make start-prod
+# Start (turn debug off in config.py for production)
+$ make start
 
 # Run tests
-> make test
+$ make test
 
 ```
