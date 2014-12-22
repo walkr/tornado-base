@@ -9,7 +9,8 @@ from app.src import routes
 
 application = tornado.web.Application(routes.routes, **config.TORNADO)
 
-if __name__ == "__main__":
+
+def main():
     define('port', default=8001, type=int)
     tornado.options.parse_command_line()
     logging.info(
