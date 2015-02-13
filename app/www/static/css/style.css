@@ -65,11 +65,11 @@ ul > li {
   position: relative;
   text-align: center;
 }
-.left {
+.float-left {
   position: relative;
   float: left;
 }
-.right {
+.float-right {
   position: relative;
   float: right;
 }
