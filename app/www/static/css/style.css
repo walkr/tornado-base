@@ -76,6 +76,49 @@ ul > li {
 .inline {
   display: inline-block;
 }
+.padding {
+  padding: 20px;
+}
+.padding.tiny {
+  padding: 5px;
+}
+.padding.small {
+  padding: 10px;
+}
+.padding.big {
+  padding: 30px;
+}
+.padding.large {
+  padding: 40px;
+}
+.padding.vertical {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding.horizontal {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.padding.top {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+.padding.bottom {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.padding.right {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+.padding.left {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
 input[type=text] {
   border: solid #ddd 1px;
   padding: 6px;
