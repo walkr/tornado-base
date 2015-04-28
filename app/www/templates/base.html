@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{static_url('css/style.css')}}">
 </head>
 <body>
+{% block body %}
 
     <div class="wrapper">
 
@@ -67,5 +68,6 @@
     <!-- custom javascript -->
     {% block js %}{% end %}
 
+{% end %}
 </body>
 </html>

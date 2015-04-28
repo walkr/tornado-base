@@ -1,0 +1,28 @@
+{% extends '../base.html' %}
+
+{% block title %}Sign up{% end %}
+
+{% block body %}
+<div class="signup-page centered">
+    <a href="/" class="logo {% if res.error %} {{'text text-red'}} {% end %}">Project Name</a>
+    <div class="text text-red">{% if res.error %} {{res.error}} {% end %}</div>
+    <form method="post" action="/signup">
+        <div class="">
+            {% raw xsrf_form_html() %}
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input class="btn small purple inverted" type="submit" value="Sign up"><br>
+            <a href="/login">Log in</a>
+        </div>
+    </form>
+</div>
+{% end %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        // Focus on the search box
+        $("input[type=text]").focus();
+    });
+</script>
+{% end %}
