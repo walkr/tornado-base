@@ -262,7 +262,7 @@
         this.channel = new Channel("ws://localhost:8001/ws/" + this.channel);
         this.channel.on('new_msg', (function(_this) {
           return function(msg) {
-            return app.showMessage(msg);
+            return app.showMessage(new Message(msg));
           };
         })(this));
         return this.channel.on('pong', function(msg) {
@@ -280,12 +280,11 @@
       });
     };
 
-    AppView.prototype.showMessage = function(msg) {
+    AppView.prototype.showMessage = function(message) {
       var view;
       view = new MessageView({
-        model: msg
+        model: message
       });
-      console.log('View is', view);
       return this.$("#messages").append(view.render().el);
     };
 

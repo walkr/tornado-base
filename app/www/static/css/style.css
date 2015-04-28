@@ -182,6 +182,9 @@ ul > li {
   background: #ffffff;
   border: solid #eee 1px;
 }
+.block.block-inline {
+  display: inline-block;
+}
 input[type=text] {
   border: solid #ddd 1px;
   padding: 6px;

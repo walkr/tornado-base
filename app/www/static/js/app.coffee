@@ -165,7 +165,7 @@ class AppView extends Backbone.View
             this.channel = new Channel "ws://localhost:8001/ws/#{this.channel}"
 
             this.channel.on 'new_msg', (msg) =>
-                app.showMessage(msg)
+                app.showMessage(new Message(msg))
 
             this.channel.on 'pong', (msg) ->
                 console.log 'Pong'
@@ -176,9 +176,8 @@ class AppView extends Backbone.View
     ping: ->
         this.channel.send({event: 'ping', msg: null})
 
-    showMessage: (msg) ->
-        view = new MessageView({model: msg})
-        console.log 'View is', view
+    showMessage: (message) ->
+        view = new MessageView({model: message})
         this.$("#messages").append(view.render().el)
 
     sendMessage: (e) ->
