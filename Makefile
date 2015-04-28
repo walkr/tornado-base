@@ -14,7 +14,7 @@ help:
 	@echo
 
 app.install:
-	@bash script/install.sh
+	@bash script/app.install.sh
 
 app.start:
 	@venv/bin/python app/server.py --logging=debug
@@ -23,8 +23,4 @@ app.test:
 	@nosetests app/test --nologcapture
 
 deps.get:
-	@rm -rf app/lib/torhelp
-	@git clone git@bitbucket.org:walkr/torhelp.git tmp/app/lib/torhelp
-	@mv tmp/app/lib/torhelp/torhelp app/lib/torhelp
-
-	@rm -rf tmp
+	@bash script/deps.get.sh
