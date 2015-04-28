@@ -14,9 +14,9 @@
     <meta property="og:description" content="Tornado project" />
 
     <!-- <link rel="apple-touch-icon-precomposed" href="{{static_url('img/apple-touch-icon.png')}}"> -->
+    <link rel="stylesheet" href="{{static_url('lib/semantic/dist/semantic.min.css')}}">
     <link rel="shortcut icon" href="{{static_url('img/favicon.png')}}">
     <link rel="stylesheet" href="{{static_url('css/style.css')}}">
-    <link rel="stylesheet" href="{{static_url('css/semantic.min.css')}}">
 </head>
 <body>
 
@@ -26,8 +26,8 @@
         <div class="header">
             <div class="inner">
                 <div class="central padding text text-bold">
-                    <a href="/">Home</a>
-                    <a href="/channel/123">Chat</a>
+                    <a href="/"><i class="icon home"></i>Home</a>
+                    <a href="/channel/123"><i class="icon chat"></i>Chat</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,11 @@
     </div>
 
     <!-- javascript -->
-    <script src="{{static_url('js/all.js')}}"></script>
+    <script src="{{static_url('lib/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{static_url('lib/underscore/underscore-min.js')}}"></script>
+    <script src="{{static_url('lib/backbone/backbone.js')}}"></script>
+    <script src="{{static_url('lib/moment/min/moment.min.js')}}"></script>
+    <script src="{{static_url('lib/semantic/dist/semantic.min.js')}}"></script>
     <script src="{{static_url('js/app.js')}}"></script>
 
     <!-- custom javascript -->
