@@ -1,6 +1,8 @@
-@blue: #6293FE;
+@blue: #009;
 @green: #86CD4C;
 @red: #F92132;
+@white: #fff;
+@grey: #999;
 
 html{
     height: 100%;
@@ -14,9 +16,8 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #f8f8f8;
-    padding-top: 5%;
-    line-height: 1.4em;
-    font-size: 16px;
+    line-height: 1.5em;
+    font-size: 14px;
 }
 
 a, p, div, ul, ol, h1, h2, h3, img, textarea, form, select, input{
@@ -31,6 +32,7 @@ img{
     border: 0px;
 }
 a{
+    color: @blue;
     text-decoration: none;
     &:hover{
         color: orange;
@@ -50,7 +52,7 @@ ul > li{
 .clear{
     clear: both;
 }
-.invisible{
+.invisible, .hidden{
     display: none;
 }
 .center{
@@ -70,17 +72,49 @@ ul > li{
 }
 .padding{
     padding: 20px;
-    &.tiny{padding: 5px;}
-    &.small{padding: 10px;}
-    &.big{padding: 30px;}
-    &.large{padding: 40px;}
-    &.vertical{padding-left: 0; padding-right: 0;}
-    &.horizontal{padding-top: 0; padding-bottom: 0;}
-    &.top{padding-left: 0; padding-right: 0; padding-bottom: 0;}
-    &.bottom{padding-left: 0; padding-right: 0; padding-top: 0;}
-    &.right{padding-top: 0; padding-bottom: 0; padding-left: 0;}
-    &.left{padding-top: 0; padding-bottom: 0; padding-right: 0;}
+    &.padding-tiny{padding: 5px;}
+    &.padding-small{padding: 10px;}
+    &.padding-big{padding: 30px;}
+    &.padding-large{padding: 40px;}
+    &.padding-vertical{padding-left: 0; padding-right: 0;}
+    &.padding-horizontal{padding-top: 0; padding-bottom: 0;}
+    &.padding-top{padding-left: 0; padding-right: 0; padding-bottom: 0;}
+    &.padding-bottom{padding-left: 0; padding-right: 0; padding-top: 0;}
+    &.padding-right{padding-top: 0; padding-bottom: 0; padding-left: 0;}
+    &.padding-left{padding-top: 0; padding-bottom: 0; padding-right: 0;}
 }
+
+
+.text{
+
+    // colors
+    &.text-red{color: @red;}
+    &.text-green{color: @green;}
+    &.text-blue{color: @blue;}
+    &.text-white{color: @white;}
+    &.text-grey {color: @grey;}
+    &.white {color: #fff;}
+
+    // size
+    &.text-bold{font-weight: bold !important;}
+    &.text-spaced{line-height: 1.8em;}
+    &.text-smallest{font-size: 8px; vertical-lign: middle;}
+    &.text-smaller{font-size: 11px;}
+    &.text-small{font-size: 13px;}
+    &.text-big{font-size: 16px;}
+    &.text-bigger{font-size: 18px;}
+    &.text-large{font-size: 24px;}
+    &.text-larger{font-size: 28px;}
+    &.text-huge{font-size: 32px;}
+}
+
+.block{
+    &.block-red{background: @red;}
+    &.block-green{background: @green;}
+    &.block-blue{background: @blue;}
+    &.block-white{background: @white; border: solid #eee 1px;}
+}
+
 input[type=text]{
     border: solid #ddd 1px;
     padding: 6px;
@@ -120,4 +154,13 @@ input[type=button].blue,
 .button.blue{
     background: @blue;
     color: #fff;
+}
+
+.inner{
+    .central{
+        max-width: 975px;
+        margin: 0 auto;
+        position: relative;
+        // border: solid red 1px;
+    }
 }

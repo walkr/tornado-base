@@ -9,9 +9,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #f8f8f8;
-  padding-top: 5%;
-  line-height: 1.4em;
-  font-size: 16px;
+  line-height: 1.5em;
+  font-size: 14px;
 }
 a,
 p,
@@ -39,6 +38,7 @@ img {
   border: 0px;
 }
 a {
+  color: #000099;
   text-decoration: none;
 }
 a:hover {
@@ -58,7 +58,8 @@ ul > li {
 .clear {
   clear: both;
 }
-.invisible {
+.invisible,
+.hidden {
   display: none;
 }
 .center {
@@ -79,45 +80,107 @@ ul > li {
 .padding {
   padding: 20px;
 }
-.padding.tiny {
+.padding.padding-tiny {
   padding: 5px;
 }
-.padding.small {
+.padding.padding-small {
   padding: 10px;
 }
-.padding.big {
+.padding.padding-big {
   padding: 30px;
 }
-.padding.large {
+.padding.padding-large {
   padding: 40px;
 }
-.padding.vertical {
+.padding.padding-vertical {
   padding-left: 0;
   padding-right: 0;
 }
-.padding.horizontal {
+.padding.padding-horizontal {
   padding-top: 0;
   padding-bottom: 0;
 }
-.padding.top {
+.padding.padding-top {
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 0;
 }
-.padding.bottom {
+.padding.padding-bottom {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
 }
-.padding.right {
+.padding.padding-right {
   padding-top: 0;
   padding-bottom: 0;
   padding-left: 0;
 }
-.padding.left {
+.padding.padding-left {
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 0;
+}
+.text.text-red {
+  color: #f92132;
+}
+.text.text-green {
+  color: #86cd4c;
+}
+.text.text-blue {
+  color: #000099;
+}
+.text.text-white {
+  color: #ffffff;
+}
+.text.text-grey {
+  color: #999999;
+}
+.text.white {
+  color: #fff;
+}
+.text.text-bold {
+  font-weight: bold !important;
+}
+.text.text-spaced {
+  line-height: 1.8em;
+}
+.text.text-smallest {
+  font-size: 8px;
+  vertical-lign: middle;
+}
+.text.text-smaller {
+  font-size: 11px;
+}
+.text.text-small {
+  font-size: 13px;
+}
+.text.text-big {
+  font-size: 16px;
+}
+.text.text-bigger {
+  font-size: 18px;
+}
+.text.text-large {
+  font-size: 24px;
+}
+.text.text-larger {
+  font-size: 28px;
+}
+.text.text-huge {
+  font-size: 32px;
+}
+.block.block-red {
+  background: #f92132;
+}
+.block.block-green {
+  background: #86cd4c;
+}
+.block.block-blue {
+  background: #000099;
+}
+.block.block-white {
+  background: #ffffff;
+  border: solid #eee 1px;
 }
 input[type=text] {
   border: solid #ddd 1px;
@@ -152,6 +215,11 @@ input[type=button].red,
 input[type=submit].blue,
 input[type=button].blue,
 .button.blue {
-  background: #6293fe;
+  background: #000099;
   color: #fff;
+}
+.inner .central {
+  max-width: 975px;
+  margin: 0 auto;
+  position: relative;
 }
