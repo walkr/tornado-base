@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat{% end %}
+{% block header %}{% end %}
+
+{% block content %}
+<div class="chat-page">
+    <div class="text text-bold text-large">Channel = {{req.args[0]}}</div>
+    <div id="messages"></div>
+    <input type="text" id="new-message" placeholder="Type message">
+</div>
+{% end %}
+
+{% block footer %}{% end %}
+
+{% block js %}
+
+<script type="text/template" id="message-template">
+    <div class=""><%- text %> at <%- timestamp %></div>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var channel = '{{req.args[0]}}';
+        var app = new Chat.AppView({channel: channel});
+    });
+</script>
+
+{% end %}

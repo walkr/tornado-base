@@ -19,13 +19,49 @@
     <link rel="stylesheet" href="{{static_url('css/semantic.min.css')}}">
 </head>
 <body>
+
     <div class="wrapper">
-        <div class="header">Header</div>
-        <div class="content">{% block content %}{% end %}</div>
-        <div class="footer">Footer</div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="inner">
+                <div class="central padding text text-bold">
+                    <a href="/">Home</a>
+                    <a href="/channel/123">Chat</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="inner">
+                <div class="central padding">{% block content %}Content{% end %}</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="inner">
+                <div class="central padding text text-small">
+                    <div class="float-left">Footer</div>
+                    <div class="float-right">
+                        <a href="/about">About</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- javascript -->
     <script src="{{static_url('js/all.js')}}"></script>
     <script src="{{static_url('js/app.js')}}"></script>
+
+    <!-- custom javascript -->
     {% block js %}{% end %}
+
 </body>
 </html>

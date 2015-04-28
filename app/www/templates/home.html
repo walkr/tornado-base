@@ -2,10 +2,30 @@
 
 {% block content %}
 
-    <h3>Hello</h3>
-    {% for entry in [{'title': 'Some title'}]*3 %}
-        {% module Module('modules/entry.html', entry=entry) %}
-    {% end %}
+    <!-- Posts Page -->
+    <div class="posts-page">
+
+        <div class="text text-bold text-large">Posts</div>
+
+        {% if res.error %}
+            <div class="text text-red">An error occured: {{res.error}}</div>
+        {% else %}
+
+            {% if res.body['results'] %}
+
+                {% for entry in [{'title': 'Hei'}]%}
+                    {% module Module('modules/entry.html', entry=entry) %}
+                {% end %}
+
+            {% else %}
+
+                <div class="text text-grey">Nothing here</div>
+
+            {% end %}
+
+        {% end %}
+
+    </div>
 
 {% end %}
 
