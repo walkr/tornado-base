@@ -1,3 +1,7 @@
 tornado
 requests
 nose
+torhelp
+redis
+bson
+pymongo
