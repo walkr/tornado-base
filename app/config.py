@@ -2,6 +2,7 @@ import os
 import sys
 import redis
 import pymongo
+import rq
 
 ROOT_DIR = os.path.dirname(__file__)
 sys.path.append(os.path.dirname(ROOT_DIR))
@@ -22,3 +23,4 @@ TORNADO = dict(
 
 DB = pymongo.MongoClient()['tornado_base']
 REDIS = redis.Redis()
+JOBS_QUEUE = rq.Queue(connection=REDIS)

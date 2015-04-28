@@ -5,3 +5,5 @@ torhelp
 redis
 bson
 pymongo
+honcho
+rq

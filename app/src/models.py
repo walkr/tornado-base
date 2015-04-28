@@ -13,14 +13,19 @@ class BaseModel(Model):
     def is_valid(self):
         return True
 
+    @classmethod
+    def query(cls, fltr, limit=0, offset=0):
+        results = cls.Proxy.query(fltr, limit, offset)
+        return [cls(**r) for r in results] if results else None
+
 
 class User(BaseModel):
     """ User model """
     Proxy = MongodbProxy(config.DB['users'])
 
-    key = CharField()
-    username = CharField()
-    password = CharField()
+    key = StringField()
+    username = StringField()
+    password = StringField()
     created = IntegerField(default=lambda: int(time.time()))
 
 
@@ -28,26 +33,39 @@ class Post(BaseModel):
     """ Blog post model """
     Proxy = MongodbProxy(config.DB['posts'])
 
-    key = CharField()
-    userkey = CharField()
-    title = CharField()
-    content = CharField()
+    key = StringField()
+    userkey = StringField()
+    title = StringField()
+    content = StringField()
     timestamp = IntegerField(default=lambda: int(time.time()))
-    tags = SetField(CharField())
+    tags = SetField(StringField())
 
 
 class Comment(BaseModel):
     """ Comment model """
     Proxy = MongodbProxy(config.DB['comments'])
 
-    key = CharField()
-    userkey = CharField()
-    content = CharField()
+    key = StringField()
+    userkey = StringField()
+    content = StringField()
     created = IntegerField(default=lambda: int(time.time()))
 
 
 class Channel(BaseModel):
     """ Chaneel/Room is an abstract model used for ws communication """
 
-    secret = CharField()
-    subscribers = SetField(CharField())
+    secret = StringField()
+    subscribers = SetField(StringField())
+
+
+class Activity(BaseModel):
+    """ Activity log """
+
+    Proxy = MongodbProxy(config.DB['activity'])
+
+    key = StringField()
+    ip = StringField()
+    kind = StringField()
+    userkey = StringField()
+    message = StringField()
+    private = BooleanField(default=True)
