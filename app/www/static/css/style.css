@@ -226,3 +226,72 @@ input[type=button].blue,
   margin: 0 auto;
   position: relative;
 }
+.login-page,
+.signup-page {
+  height: 100vh;
+  line-height: 3em;
+  padding-top: 10%;
+  margin: 0 auto;
+  text-align: center;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #ffffff, #ffffff);
+  background-image: -moz-linear-gradient(top, #eeeeee, #ffffff, #ffffff);
+  background-image: -ms-linear-gradient(top, #eeeeee, #ffffff, #ffffff);
+  background-image: -o-linear-gradient(top, #eeeeee, #ffffff, #ffffff);
+}
+.login-page .logo,
+.signup-page .logo {
+  padding: 3px 10px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000099;
+  display: inline-block;
+}
+.login-page .logo:hover,
+.signup-page .logo:hover {
+  text-decoration: none;
+}
+.login-page .logo.red,
+.signup-page .logo.red {
+  border-color: #f92132;
+  color: #f92132;
+}
+.login-page .text-red,
+.signup-page .text-red {
+  height: 45px;
+}
+.login-page input[type=text],
+.signup-page input[type=text],
+.login-page input[type=password],
+.signup-page input[type=password] {
+  background: #000099;
+  opacity: 0.8;
+  border: 0;
+}
+.login-page input[type=submit],
+.signup-page input[type=submit] {
+  background: #000099;
+  border: 0;
+}
+.login-page input,
+.signup-page input {
+  padding: 10px !important;
+  width: 300px;
+  border-radius: 2px;
+  color: #fff;
+}
+.login-page ::-webkit-input-placeholder,
+.signup-page ::-webkit-input-placeholder {
+  color: #ddd;
+}
+.login-page ::-moz-placeholder,
+.signup-page ::-moz-placeholder {
+  color: #ddd;
+}
+.login-page :-moz-placeholder,
+.signup-page :-moz-placeholder {
+  color: #ddd;
+}
+.login-page :-ms-input-placeholder,
+.signup-page :-ms-input-placeholder {
+  color: #ddd;
+}

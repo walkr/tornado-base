@@ -4,6 +4,14 @@
 @white: #fff;
 @grey: #999;
 
+.background-gradient(@direction, @1,@2,@3){
+    background-image: -webkit-linear-gradient(@direction, @1, @2, @3);
+    background-image:    -moz-linear-gradient(@direction, @1, @2, @3);
+    background-image:     -ms-linear-gradient(@direction, @1, @2, @3);
+    background-image:      -o-linear-gradient(@direction, @1, @2, @3);
+
+}
+
 html{
     height: 100%;
 }
@@ -168,4 +176,54 @@ input[type=button].blue,
         position: relative;
         // border: solid red 1px;
     }
+}
+
+
+.login-page,
+.signup-page{
+    height: 100vh;
+    line-height: 3em;
+    padding-top: 10%;
+    margin: 0 auto;
+    text-align: center;
+
+    .background-gradient(top,  #eee, #fff, #fff);
+
+    .logo{
+        padding: 3px 10px;
+        font-size: 36px;
+        font-weight: bold;
+        color: @blue;
+        display: inline-block;
+        &:hover{text-decoration: none;}
+    }
+    .logo.red{
+        border-color: @red;
+        color: @red;
+    }
+    .text-red{
+        height: 45px;
+    }
+
+    input[type=text], input[type=password], {
+        background: @blue;
+        opacity: 0.8;
+        border: 0;
+    }
+    input[type=submit]{
+        background: @blue;
+        border: 0;
+    }
+    input{
+        padding: 10px !important;
+        width: 300px;
+        border-radius: 2px;
+        color: #fff;
+    }
+
+    ::-webkit-input-placeholder{color: #ddd;}
+    ::-moz-placeholder{color: #ddd;}
+    :-moz-placeholder{color: #ddd;}
+    :-ms-input-placeholder{color: #ddd;}
+
 }
