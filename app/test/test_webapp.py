@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(__file__) + '/..')
 class HTTPTest(WebTestCase):
 
     def test_get_main(self):
-        for url in ['/', '/about', '/term', '/privacy']:
+        for url in ['/', '/about', '/term', '/privacy', 'signup', 'login']:
             resp = self.fetch('/')
             self.assertEqual(200, resp.code)
 
