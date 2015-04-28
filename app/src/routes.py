@@ -1,8 +1,16 @@
+# Here is the route mapping for the app
+
 import tornado.web
-from src.handlers import MainHandler
+from app.src.handlers import ws, web, rest
 
 
 routes = [
-    (r'/', MainHandler),
+    (r'/', web.HomeHandler),
+    (r'/(about|privacy|terms)', web.PublicHandler),
+    (r'/channel/(.+)', web.ChannelHandler),
+    (r'/ws/(.+)', ws.ChatHandler),
+    (r'/v1/users/?(.+)?', rest.UserHandler),
+    (r'/v1/posts/?(.+)?', rest.PostHandler),
+    (r'/v1/comments/?(.+)?', rest.CommentHandler),
     (r'/static/(.+)', tornado.web.StaticFileHandler),
 ]
