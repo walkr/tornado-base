@@ -11,21 +11,25 @@ from app import config
 rl_pipe = pipe.RateLimit(
     RedisProxy(config.REDIS), 20, 1, 10, 5*60, name='rate_limit')
 
-# read session pipe
+# session read pipe
 sr_pipe = pipe.SessionRead(
     RedisSessionReaderWriter(config.REDIS),
     Session,
     name='session_read')
 
-# write session pipe
+# session write pipe
 sw_pipe = pipe.SessionWrite(
     RedisSessionReaderWriter(config.REDIS),
     Session,
     name='session_write')
 
+# session remove pipe
+srm_pipe = pipe.SessionRemove(
+    RedisSessionReaderWriter(config.REDIS),
+    Session,
+    name='session_remove')
 
-# authorize_pipe checks whether the user
-# can perform various operations on the resource
+# authorize pipe
 authorize_pipe = pipe.Authorize(name='authorize')
 
 
@@ -37,5 +41,5 @@ common = pipe.Pipeline(
 )
 
 
-# pipeline for showing html pages
+# simple pipeline for showing html pages
 html = lambda filepath: pipe.Pipeline(pipe.HTMLEncode(filepath, name='html'))
