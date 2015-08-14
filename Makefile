@@ -52,6 +52,7 @@ local.app.test:
 local.app.deps.get:
 	@bash script/app.deps.get.sh
 
+
 local.sql.init:
 	@venv/bin/python script/sql.init.py
 
@@ -86,13 +87,13 @@ remote.app.test:
 
 
 
-local.sql.init:
+remote.sql.init:
 	@fab -P --roles sql remote_sql_init
 
-local.sql.backup:
+remote.sql.backup:
 	@fab -P --roles sql remote_sql_backup
 
-local.sql.restore:
+remote.sql.restore:
 	@fab -P --roles sql remote_sql_restore
 
 
