@@ -8,11 +8,12 @@ from app.lib.torhelp.crypto import Hasher
 from app import config
 from app.src import jobs
 from app.src import models
+from app.src import util
 from app.src.pipelines import *
 
 
 manager = Manager(
-    proxy=MongodbProxy(config.DB['users']),
+    proxy=util.make_proxy_for_table(models.User, 'users'),
     hasher=Hasher('sha256')
 )
 
@@ -36,7 +37,7 @@ class MaybeRedirectPipe(pipe.Pipe):
         self.location = location
 
     def __call__(self, req, res):
-        if req.session.data:
+        if req.session and req.session.data:
             req.handler.redirect(self.location)
         return (req, res)
 
@@ -45,7 +46,8 @@ class SignupUserPipe(pipe.Pipe):
     """ Create a new user in the database """
 
     def __call__(self, req, res):
-        user, error = manager.create_user(req.body)
+        model = models.User(**req.body)
+        user, error = manager.create_user(model)
         if error:
             res.error = error
             req.handler.render('public/signup.html', req=req, res=res)
@@ -74,9 +76,8 @@ class LoginUserPipe(pipe.Pipe):
         config.JOBS_QUEUE.enqueue(jobs.Activity.log, data, result_ttl=0)
 
     def __call__(self, req, res):
-        user, error = manager.authenticate_user(
-            req.body['username'], req.body['password']
-        )
+        model = models.User(**req.body)
+        user, error = manager.authenticate_user(model)
         if error:
             res.error = error
             self.log_fail(req)
@@ -109,7 +110,10 @@ class LogActivityPipe(pipe.Pipe):
 # ================================ pipelines ==============================
 
 # create a rate limiter (3 reqs/s per IP, with 0 burst reqs every 0 secs)
-auth_rl_pipe = pipe.RateLimit(RedisProxy(config.REDIS), 30, 1, 0, 0)
+# rate limit pipe
+_rl_proxy = RedisProxy(pipe.RateLimit.RateLimitModel, config.REDIS)
+_rl_conf = pipe.RateLimit.RateLimitConfig(30, 1, 0, 0)
+auth_rl_pipe = pipe.RateLimit(_rl_proxy, _rl_conf, name='rate_limit')
 
 
 signup_get_pipeline = pipe.Pipeline(

@@ -1,9 +1,9 @@
 tornado
 requests
 nose
-torhelp
 redis
-bson
 pymongo
+rethinkdb
+arrow
 honcho
 rq
