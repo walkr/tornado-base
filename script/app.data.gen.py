@@ -1,6 +1,9 @@
 # Generate test data
 
+import os
 import json
+
+os.sys.path.append(os.getcwd())
 from app.src import models
 
 
