@@ -47,7 +47,7 @@ local.app.start:
 	@venv/bin/python app/server.py --logging=debug
 
 local.app.test:
-	@nosetests app/test --nologcapture
+	@venv/bin/nosetests app/test --nologcapture
 
 local.app.deps.get:
 	@bash script/app.deps.get.sh
