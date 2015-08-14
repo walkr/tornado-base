@@ -28,15 +28,15 @@ def apply(env):
 
     env.passwords = {
         # apps
-        'davinci@IP-PUBLIC-APP-1:SSH-PORT': 'USER-PASSWD-APP',
-        'davinci@IP-PUBLIC-APP-2:SSH-PORT': 'USER-PASSWD-APP',
+        'YOUR-USERNAME@IP-PUBLIC-APP-1:SSH-PORT': 'USER-PASSWD-APP',
+        'YOUR-USERNAME@IP-PUBLIC-APP-2:SSH-PORT': 'USER-PASSWD-APP',
 
         # sql
-        'davinci@IP-PUBLIC-SQL-1:SSH-PORT': 'USER-PASSWD-SQL',
-        'davinci@IP-PUBLIC-SQL-2:SSH-PORT': 'USER-PASSWD-SQL',
+        'YOUR-USERNAME@IP-PUBLIC-SQL-1:SSH-PORT': 'USER-PASSWD-SQL',
+        'YOUR-USERNAME@IP-PUBLIC-SQL-2:SSH-PORT': 'USER-PASSWD-SQL',
 
         # prx
-        'davinci@IP-PUBLIC-1:SSH-PORT': 'USER-PASSWD-PRX',
+        'YOUR-USERNAME@IP-PUBLIC-1:SSH-PORT': 'USER-PASSWD-PRX',
     }
 
     env.key_filename = [
