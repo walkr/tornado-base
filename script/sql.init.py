@@ -1,7 +1,9 @@
 # Initialize database
-
-from app import config
+import os
 import rethinkdb as r
+
+os.sys.path.append(os.getcwd())
+from app import config
 
 
 def catch_err(fun, *args, **kwargs):
