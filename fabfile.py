@@ -72,7 +72,9 @@ def remote_app_upstart():
 
     # Web
     put('conf/app.upstart.conf', '/tmp/{}.app.conf'.format(fabconf.app_name))
-    sudo('cp /tmp/{}.app.conf /etc/init/{}.app.conf'.format(fabconf.app_name))
+    sudo('cp /tmp/{}.app.conf /etc/init/{}.app.conf'.format(
+        fabconf.app_name, fabconf.app_name)
+    )
     sudo('rm /tmp/{}.app.conf'.format(fabconf.app_name))
 
     # Worker
@@ -92,7 +94,7 @@ def remote_app_install():
             run('mkdir -p var/log')
 
     # Copy upstart script
-    remote_app_upstart_config_push()
+    remote_app_upstart()
 
     # Install python and co.
 
