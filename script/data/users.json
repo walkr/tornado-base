@@ -1,40 +1,53 @@
 [{
-    "fullname": "Just Bieber",
+    "username": "jb",
+    "fullname": "Justin Bieber",
     "image": "https://pbs.twimg.com/profile_images/608707522329862144/LUWTGFVo.jpg"
 }, {
+    "username": "jp",
     "fullname": "Juliana Paes",
     "image": "https://pbs.twimg.com/profile_images/515144415338192896/V7_zCoZJ.jpeg"
 }, {
+    "username": "bg",
     "fullname": "Bill Gates",
     "image": "https://pbs.twimg.com/profile_images/558109954561679360/j1f9DiJi.jpeg"
 }, {
+    "username": "bo",
     "fullname": "Barack Obama",
     "image": "https://pbs.twimg.com/profile_images/600314410003865600/laIuu4bB.jpg"
 }, {
+    "username": "tc",
     "fullname": "Tim Cook",
     "image": "https://pbs.twimg.com/profile_images/378800000483764274/ebce94fb34c055f3dc238627a576d251.jpeg"
 },{
+    "username": "ow",
     "fullname": "Oprah Winfrey",
     "image": "https://pbs.twimg.com/profile_images/517424562279944192/HPYrGBlP.jpeg"
 }, {
+    "username": "mo",
     "fullname": "Michelle Obama",
     "image": "https://pbs.twimg.com/profile_images/507610912933441538/HCKhYoBO.png"
 }, {
+    "username": "gr",
     "fullname": "Guido van Rossum",
     "image": "https://pbs.twimg.com/profile_images/424495004/GuidoAvatar.jpg"
 }, {
+    "username": "pg",
     "fullname": "Paul Graham",
     "image": "https://pbs.twimg.com/profile_images/1824002576/pg-railsconf.jpg"
 }, {
+    "username": "sa",
     "fullname": "Sam Altman",
     "image": "https://pbs.twimg.com/profile_images/1272740548/SamAltman_new_cropped_small.jpg"
 }, {
+    "username": "dh",
     "fullname": "Drew Houston",
     "image": "https://pbs.twimg.com/profile_images/2200590822/drew.jpg"
 }, {
+    "username": "rh",
     "fullname": "Reid Hoffman",
     "image": "https://pbs.twimg.com/profile_images/468539219275567105/sKdoFXJ5.jpeg"
 }, {
+    "username": "dm",
     "fullname": "Dustin Moskovitz",
     "image": "https://pbs.twimg.com/profile_images/3724920726/ab289ed6fef5e9b31b6a992108735bf9.jpeg"
 }]
