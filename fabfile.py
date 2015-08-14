@@ -150,22 +150,28 @@ def remote_app_push():
 # =============================================================================
 # DATABASE
 # =============================================================================
+def remote_sql_config():
+    """ Configure database """
+    sudo('cp /etc/rethinkdb/default.conf.sample /etc/rethinkdb/instances.d/instance1.conf')
+    sudo('service rethinkdb start')
+
+
 def remote_sql_init():
     """ Init database (tables, etc) """
     with cd(fabconf.app_remote_dir):
-        run('make local.db.init')
+        run('make local.sql.init')
 
 
 def remote_sql_backup():
     """ Backup DB """
     with cd(fabconf.app_remote_dir):
-        run('make local.db.backup')
+        run('make local.sql.backup')
 
 
 def remote_sql_restore():
     """ Restore DB """
     with cd(fabconf.app_remote_dir):
-        run('make local.db.restore')
+        run('make local.sql.restore')
 
 
 # =============================================================================
